@@ -2,10 +2,12 @@ import {NavLink} from "react-router-dom";
 import classes from "./MainNavigation.module.css";
 import {Fragment} from "react";
 
-const Header = () => {
+const MainNavigation = () => {
   return (
       <header className={classes.header}>
-        <NavLink to="/quotes"><span className={classes.logo}>Great Quotes</span></NavLink>
+        <NavLink to="/quotes">
+          <div className={classes.logo}>Great Quotes</div>
+        </NavLink>
         <nav className={classes.nav}>
           <ul>
             <li>
@@ -20,4 +22,4 @@ const Header = () => {
   )
 };
 
-export default Header;
+export default MainNavigation;
