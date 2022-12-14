@@ -1,6 +1,5 @@
 import {NavLink} from "react-router-dom";
 import classes from "./MainNavigation.module.css";
-import {Fragment} from "react";
 
 const MainNavigation = () => {
   return (
