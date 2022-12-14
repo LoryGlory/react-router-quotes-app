@@ -6,14 +6,14 @@ const Header = () => {
   return (
       <Fragment>
         <header className={classes.header}>
-          <NavLink to="/welcome"><span className={classes.logo}>Great Quotes</span></NavLink>
+          <NavLink to="/quotes"><span className={classes.logo}>Great Quotes</span></NavLink>
           <nav className={classes.nav}>
             <ul>
               <li>
-                <NavLink to="/all-quotes" activeClassName={classes.active}>All Quotes</NavLink>
+                <NavLink to="/quotes" activeClassName={classes.active}>All Quotes</NavLink>
               </li>
               <li>
-                <NavLink to="/add-a-quote" activeClassName={classes.active}>Add a Quote</NavLink>
+                <NavLink to="/new-quote" activeClassName={classes.active}>Add a Quote</NavLink>
               </li>
             </ul>
           </nav>
