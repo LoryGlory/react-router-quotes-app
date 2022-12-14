@@ -2,7 +2,8 @@ import {Route, Switch, Redirect} from "react-router-dom";
 import {Fragment} from "react";
 import Header from "./components/layout/Header";
 import AllQuotes from "./components/pages/AllQuotes";
-import AddQuote from "./components/pages/AddQuote";
+import NewQuote from "./components/pages/NewQuote";
+import QuoteDetail from "./components/pages/QuoteDetail";
 
 function App() {
   return (
@@ -10,16 +11,17 @@ function App() {
         <Header/>
         <main>
           <Switch>
-            <Route path='/welcome'>
-              <h1>
-                Welcome!
-              </h1>
+            <Route path='/' exact>
+              <Redirect to='/quotes'/>
             </Route>
-            <Route path='/all-quotes' exact>
+            <Route path='/quotes' exact>
               <AllQuotes/>
             </Route>
-            <Route path='/add-a-quote'>
-              <AddQuote/>
+            <Route path='/quotes/:quoteId'>
+              <QuoteDetail/>
+            </Route>
+            <Route path='new-quote'>
+              <NewQuote/>
             </Route>
           </Switch>
         </main>
