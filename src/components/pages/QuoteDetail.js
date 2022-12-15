@@ -1,15 +1,28 @@
 import {useParams, Route} from "react-router-dom";
 import {Fragment} from "react";
 import Comments from "../comments/Comments";
+import HighlightedQuote from "../quotes/HighlightedQuote";
+import NoQuotesFound from "../quotes/NoQuotesFound";
+
+const DUMMY_QUOTES = [
+  {id: 'q1', author: 'Laura', text: 'React is fun!'},
+  {id: 'q2', author: 'Lory', text: 'React is great!'}
+]
 
 const QuoteDetail = () => {
   const params = useParams();
-  console.log(params.quoteId);
+
+  const quote = DUMMY_QUOTES.find(quote => quote.id === params.quoteId)
+
+  if (!quote) {
+    return (
+        <NoQuotesFound/>
+    )
+  }
 
   return (
       <Fragment>
-        <h1>Quote Detail Page</h1>
-        <p>{params.quoteId}</p>
+        <HighlightedQuote text={quote.text} author={quote.author}/>
         <Route path={`/quotes/${params.quoteId}/comments`}>
           <Comments/>
         </Route>
