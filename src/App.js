@@ -5,7 +5,7 @@ import NewQuote from "./components/pages/NewQuote";
 import QuoteDetail from "./components/pages/QuoteDetail";
 import Layout from "./components/layout/Layout";
 import NotFound from "./components/pages/NotFound";
-// Test
+
 function App() {
   return (
       <Layout>
