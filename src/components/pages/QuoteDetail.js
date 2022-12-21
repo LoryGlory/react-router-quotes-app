@@ -2,7 +2,6 @@ import {useParams, Route, Link, useRouteMatch} from "react-router-dom";
 import {Fragment, useEffect} from "react";
 import Comments from "../comments/Comments";
 import HighlightedQuote from "../quotes/HighlightedQuote";
-import NoQuotesFound from "../quotes/NoQuotesFound";
 import useHttp from "../hooks/use-http";
 import {getSingleQuote} from "../lib/api";
 import LoadingSpinner from "../UI/LoadingSpinner";
