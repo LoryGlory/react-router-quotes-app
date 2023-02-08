@@ -74,7 +74,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-React app created to display and add quotes. Includes Firebase database connection, lazy loading, ability to add comments and basic input validity.
+React app created to display and add quotes. Includes React Router, Firebase database connection, lazy loading, ability to add comments and basic input validity.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
