@@ -1,3 +1,5 @@
+// component for displaying a single quote
+// using Router, useParams and RouteMatch to display corresponding dynamic quote id dynamically
 import {useParams, Route, Link, useRouteMatch} from "react-router-dom";
 import {Fragment, useEffect} from "react";
 import Comments from "../comments/Comments";
@@ -10,6 +12,7 @@ const QuoteDetail = () => {
   const match = useRouteMatch();
   const params = useParams();
 
+  // use quoteId as parameter for url identification below; quoteId = firebase data entry key
   const {quoteId} = params;
 
   const {sendRequest, status, data: loadedQuote, error} = useHttp(getSingleQuote, true);
@@ -18,6 +21,7 @@ const QuoteDetail = () => {
     sendRequest(quoteId);
   }, [sendRequest, quoteId]);
 
+  // display loader when status is pending
   if (status === 'pending') {
     return (
         <div className='centered'>
@@ -26,12 +30,14 @@ const QuoteDetail = () => {
     )
   }
 
+  // display error when no connection can be established
   if (error) {
     return (
         <p>No quote found!</p>
     )
   }
 
+  // display error when no quotes are found
   if (!loadedQuote.text) {
     return (
         <p>No quote found!</p>
@@ -39,6 +45,7 @@ const QuoteDetail = () => {
   }
 
   return (
+      // display corresponding quote dynamically
       <Fragment>
         <HighlightedQuote text={loadedQuote.text} author={loadedQuote.author}/>
         <Route path={match.path} exact>

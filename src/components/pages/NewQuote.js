@@ -1,3 +1,4 @@
+// component to add quotes, use post method from ../lib/api
 import {useEffect} from "react";
 import {useHistory} from "react-router-dom";
 import QuoteForm from "../quotes/QuoteForm";
@@ -14,7 +15,7 @@ const NewQuote = () => {
     }
   }, [status, history]);
 
-
+  // handler for adding quotes
   const addQuoteHandler = quoteData => {
     sendRequest(quoteData);
   }

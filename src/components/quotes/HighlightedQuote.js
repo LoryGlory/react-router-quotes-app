@@ -1,3 +1,4 @@
+// component for quote used in QuoteDetail component
 import classes from './HighlightedQuote.module.css';
 
 const HighlightedQuote = (props) => {

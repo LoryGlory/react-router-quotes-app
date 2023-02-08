@@ -1,3 +1,4 @@
+// component for displaying all corresponding comments from single quote
 import {useState, useEffect, useCallback} from 'react';
 import useHttp from "../hooks/use-http";
 import {getAllComments} from "../lib/api";

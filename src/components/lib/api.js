@@ -1,5 +1,8 @@
+// component for connecting to firebase database
+// contains necessary functions to read and write data
 const FIREBASE_DOMAIN = 'https://react-router-quotes-app-5c55a-default-rtdb.firebaseio.com/';
 
+// function for getting all quotes, used in AllQuotes.js
 export async function getAllQuotes() {
   const response = await fetch(`${FIREBASE_DOMAIN}/quotes.json`);
   const data = await response.json();
@@ -22,6 +25,8 @@ export async function getAllQuotes() {
   return transformedQuotes;
 }
 
+// function for getting single quote, depending on which quote was clicked
+// quoteId = firebase data key
 export async function getSingleQuote(quoteId) {
   const response = await fetch(`${FIREBASE_DOMAIN}/quotes/${quoteId}.json`);
   const data = await response.json();
@@ -38,6 +43,7 @@ export async function getSingleQuote(quoteId) {
   return loadedQuote;
 }
 
+// function for adding quote to firebase database
 export async function addQuote(quoteData) {
   const response = await fetch(`${FIREBASE_DOMAIN}/quotes.json`, {
     method: 'POST',
@@ -55,6 +61,7 @@ export async function addQuote(quoteData) {
   return null;
 }
 
+// function for adding comment to individual quote
 export async function addComment(requestData) {
   const response = await fetch(`${FIREBASE_DOMAIN}/comments/${requestData.quoteId}.json`, {
     method: 'POST',
@@ -72,6 +79,7 @@ export async function addComment(requestData) {
   return { commentId: data.name };
 }
 
+// function for loading all comments in individual quote
 export async function getAllComments(quoteId) {
   const response = await fetch(`${FIREBASE_DOMAIN}/comments/${quoteId}.json`);
 

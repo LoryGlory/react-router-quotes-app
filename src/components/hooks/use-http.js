@@ -1,5 +1,8 @@
+// component handling http request with useReducer and useCallback hooks
+// defining action types for success, error and send
 import { useReducer, useCallback } from 'react';
 
+// reducers for different http action types, defining returned corresponding data & error messages
 function httpReducer(state, action) {
   if (action.type === 'SEND') {
     return {

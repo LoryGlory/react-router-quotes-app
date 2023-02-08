@@ -1,3 +1,4 @@
+// main navigation component containing NavLinks to pages, adding active class
 import {NavLink} from "react-router-dom";
 import classes from "./MainNavigation.module.css";
 

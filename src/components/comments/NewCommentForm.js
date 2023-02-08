@@ -1,3 +1,4 @@
+// form component containing form for adding comments, using useHttp custom hook for adding comment
 import {useRef, useEffect} from 'react';
 import classes from './NewCommentForm.module.css';
 import useHttp from "../hooks/use-http";

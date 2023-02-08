@@ -1,3 +1,4 @@
+// component to display all quotes
 import {useEffect} from "react";
 import QuoteList from "../quotes/QuoteList";
 import useHttp from "../hooks/use-http";
@@ -6,6 +7,7 @@ import LoadingSpinner from "../UI/LoadingSpinner";
 import NoQuotesFound from "../quotes/NoQuotesFound";
 
 const AllQuotes = () => {
+  // load all quotes from database
   const {sendRequest, status, data: loadedQuotes, error} = useHttp(getAllQuotes, true)
 
   useEffect(() => {
